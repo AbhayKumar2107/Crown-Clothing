@@ -20,7 +20,7 @@ const Navigation = () => {
                     <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/shop">
                         Shop
                     </Link>
-                    <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/sign-in">
+                    <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/auth">
                         SignIn
                     </Link>
                 </div>
