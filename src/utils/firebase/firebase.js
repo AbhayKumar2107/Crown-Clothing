@@ -8,10 +8,10 @@ import { getFirestore, doc, getDoc, setDoc, } from "firebase/firestore";
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: "crown-colthing-db",
-    storageBucket: "crown-colthing-db.firebasestorage.app",
-    messagingSenderId: "187553095324",
-    appId: "1:187553095324:web:0dc219541abdf7aca15759"
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
