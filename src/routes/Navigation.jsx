@@ -4,7 +4,6 @@ import CrownLogo from "../assets/crown.svg";
 import { UserContext } from "../contexts/userContext";
 import { signOutUser } from "../utils/firebase/firebase";
 import CartIcon from "../components/CartIcon";
-import Cart from "../components/Cart";
 
 const Navigation = () => {
 
