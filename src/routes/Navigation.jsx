@@ -5,12 +5,10 @@ import { UserContext } from "../contexts/userContext";
 import { signOutUser } from "../utils/firebase/firebase";
 import CartIcon from "../components/CartIcon";
 import Cart from "../components/Cart";
-// import { CartContext } from "../contexts/CartContext";
 
 const Navigation = () => {
 
     const { currentUser } = useContext(UserContext);
-    // const { isCartOpen } = useContext(CartContext);
 
     return (
         <>
