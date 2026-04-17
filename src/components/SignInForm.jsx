@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from '../utils/firebase/firebase';
+import { useState } from 'react'
+import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../utils/firebase/firebase';
 import FormInput from './FormInput';
 import Button from './Button';
 
@@ -18,8 +18,7 @@ const SignInForm = () => {
     }
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     }
 
 
@@ -27,12 +26,11 @@ const SignInForm = () => {
         event.preventDefault();
 
         try {
-            const response = await signInAuthUserWithEmailAndPassword(email, password);
-            console.log(response);
+            await signInAuthUserWithEmailAndPassword(email, password);
             resetFormFields();
         } catch (error) {
-           
-            switch(error.code){
+
+            switch (error.code) {
                 case 'auth/wrong-password':
                     alert('incorrect password for email');
                     break;

@@ -3,14 +3,9 @@ import Home from "./routes/Home";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./routes/Navigation";
 import Authentication from "./routes/Authentication";
+import Shop from "./routes/Shop";
+import Cart from "./components/Cart";
 
-const Shop = () => {
-  return (
-    <div>
-      <h1>I am the Shop page</h1>
-    </div>
-  );
-};
 
 const App = () => {
   return (
@@ -19,6 +14,7 @@ const App = () => {
         <Route index={true} element={<Home />} />
         <Route path="shop" element={<Shop />} />
         <Route path="auth" element={<Authentication />} />
+        <Route path="cart" element={<Cart />} />
       </Route>
     </Routes>
   );

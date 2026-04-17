@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import CrownLogo from "../assets/crown.svg";
+import { UserContext } from "../contexts/userContext";
+import { signOutUser } from "../utils/firebase/firebase";
+import CartIcon from "../components/CartIcon";
+import Cart from "../components/Cart";
+// import { CartContext } from "../contexts/CartContext";
 
 const Navigation = () => {
+
+    const { currentUser } = useContext(UserContext);
+    // const { isCartOpen } = useContext(CartContext);
+
     return (
         <>
-            <div className="h-17.5 w-full flex justify-between mb-6 mt-2 px-3">
+            <div className="h-17.5 w-full flex justify-between mb-6 mt-2 px-3 relative">
                 {/* Logo */}
                 <Link className="h-full w-26 p-4" to="/">
                     <img
@@ -20,8 +29,16 @@ const Navigation = () => {
                     <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/shop">
                         Shop
                     </Link>
-                    <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/auth">
-                        SignIn
+
+                    {
+                        currentUser ? (<span className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" onClick={signOutUser} >{" "}Sign Out{" "}</span>) : (
+                            <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/auth">
+                                Sign In
+                            </Link>)
+                    }
+
+                    <Link className="px-3.75 py-2.5 cursor-pointer hover:text-gray-800 font-bold text-gray-600 text-xl" to="/cart">
+                        <CartIcon />
                     </Link>
                 </div>
             </div>
