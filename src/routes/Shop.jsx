@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import CategoriesPreview from './CategoriesPreview'
-import Category from './category'
+import Category from './Category'
 
 const Shop = () => {
   return (

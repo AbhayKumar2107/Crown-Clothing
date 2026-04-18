@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import CrownLogo from "../assets/crown.svg";
-import { UserContext } from "../contexts/userContext";
+import { UserContext } from "../contexts/UserContext";
 import { signOutUser } from "../utils/firebase/firebase";
 import CartIcon from "../components/CartIcon";
 import ThemeToggle from "../components/ThemeToggle";
