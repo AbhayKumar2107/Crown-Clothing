@@ -1,3 +1,3 @@
 # Crown-Clothing
 
-Built With React and Tailwind CSS
+Built With React, Tailwind CSS, and Firebase.
