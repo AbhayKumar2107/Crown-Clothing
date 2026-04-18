@@ -1,11 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CategoryItem = ({ category }) => {
 
-    const { imageUrl, title } = category;
+    const { imageUrl, title, route } = category;
+    const navigate = useNavigate();
+
+    const onNavigateHandler = () => navigate(route);
 
     return (
-        <div className="min-w-[30%] h-60 flex-[1_1_auto] flex items-center justify-center border border-black mx-[7.5px] mb-3.75 overflow-hidden relative cursor-pointer group first:mr-[7.5px] last:ml-[7.5px]">
+        <div onClick={onNavigateHandler}
+         className="min-w-[30%] h-60 flex-[1_1_auto] flex items-center justify-center border border-black mx-[7.5px] mb-3.75 overflow-hidden relative cursor-pointer group first:mr-[7.5px] last:ml-[7.5px]">
 
             {/* Background Image */}
             <div

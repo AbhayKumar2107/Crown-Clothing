@@ -10,11 +10,11 @@ const ProductCard = ({product}) => {
     const addProductToCart = ()=>addItemToCart(product);
 
   return (
-    <div>
-      <img src={imageUrl} alt={`${name}`} />
-      <div>
-        <span>{name}</span>
-        <span>{price}</span>
+    <div className=''>
+      <img className='h-80 w-60' src={imageUrl} alt={`${name}`} />
+      <div className='flex justify-between'>
+        <span className=''>{name}</span>
+        <span>${price}</span>
       </div>
       <Button buttonType="inverted" onClick={addProductToCart} >Add To Cart</Button>
     </div>

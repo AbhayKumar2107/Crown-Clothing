@@ -2,7 +2,7 @@ import React from 'react'
 
 const BUTTON_TYPES_CLASSES = {
     google: "",
-    inverted: "",
+    inverted: "border-2 px-2 py-1 bg-black text-white hover:bg-white hover:text-black transition-all",
     normal:""
 }
 
