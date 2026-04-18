@@ -1,4 +1,3 @@
-import React from 'react';
 import CategoryItem from './CategoryItem';
 
 const categories = [
@@ -36,11 +35,16 @@ const categories = [
 
 
 const CategoryContainer = () => {
+  const hasIncompleteLastRow = categories.length % 3 === 2;
 
   return (
-    <div className="w-full flex flex-wrap justify-between">
-      {categories.map((category) => (
-        <CategoryItem category={category} key={category.id} />
+    <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-6">
+      {categories.map((category, index) => (
+        <CategoryItem
+          category={category}
+          key={category.id}
+          className={hasIncompleteLastRow && index >= categories.length - 2 ? "xl:col-span-3" : "xl:col-span-2"}
+        />
       ))}
     </div>
   )

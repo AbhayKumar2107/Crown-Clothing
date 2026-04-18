@@ -3,8 +3,7 @@ import SignUpForm from '../components/SignUpForm';
 
 const Authentication = () => {
     return (
-        <div>
-            Sign In Page
+        <div className="grid gap-5 md:gap-6 lg:grid-cols-2">
             <SignInForm />
             <SignUpForm />
         </div>
